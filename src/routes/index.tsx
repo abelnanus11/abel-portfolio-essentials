@@ -7,8 +7,12 @@ import {
   ExternalLink,
   Briefcase,
 } from "lucide-react";
+import { Toaster } from "@/components/ui/sonner";
 import { ProjectCarousel } from "@/components/ProjectCarousel";
+import { HireMeDialog } from "@/components/HireMeDialog";
+import { trackEvent } from "@/lib/analytics";
 
+import heroVisual from "@/assets/hero-visual.jpg";
 import proj1a from "@/assets/proj1-1.jpg";
 import proj1b from "@/assets/proj1-2.jpg";
 import proj1c from "@/assets/proj1-3.jpg";
@@ -22,8 +26,60 @@ import proj3b from "@/assets/proj3-2.jpg";
 import proj3c from "@/assets/proj3-3.jpg";
 import proj3d from "@/assets/proj3-4.jpg";
 
+const DESCRIPTION =
+  "Abel Tegegn is a Senior Full-Stack Software Engineer building modern web applications, AI integrations (RAG, LLM evaluation, MCP), WordPress websites, and scalable backend systems.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Abel Tegegn — Full-Stack Software & AI Engineer" },
+      { name: "description", content: DESCRIPTION },
+      {
+        name: "keywords",
+        content:
+          "Full-Stack Engineer, AI Engineer, RAG, LLM, MCP, Next.js, React, WordPress, FastAPI, backend, system design",
+      },
+      { property: "og:title", content: "Abel Tegegn — Full-Stack Software & AI Engineer" },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Abel Tegegn — Full-Stack Software & AI Engineer" },
+      { name: "twitter:description", content: DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Abel Tegegn",
+          jobTitle: "Full-Stack Software Engineer",
+          description: DESCRIPTION,
+          knowsAbout: [
+            "AI Engineering",
+            "Retrieval-Augmented Generation",
+            "Large Language Models",
+            "Model Context Protocol",
+            "Next.js",
+            "React",
+            "Node.js",
+            "Python",
+            "System Design",
+            "DevOps",
+          ],
+          sameAs: [
+            "https://linkedin.com",
+            "https://github.com",
+            "https://upwork.com",
+            "https://fiverr.com",
+          ],
+        }),
+      },
+    ],
+  }),
 });
 
 const services = [
@@ -110,6 +166,36 @@ const caseStudies = [
   },
 ];
 
+const aiCapabilities = [
+  "RAG",
+  "Prompt Engineering",
+  "LLM Evaluation",
+  "AI Model Fine-tuning",
+  "MCP (Model Context Protocol)",
+  "AI Chatbots",
+  "Multi-modal AI",
+  "AI Search",
+  "AI Workflows",
+  "AI Guardrails",
+  "AI Testing",
+  "AI Observability",
+];
+
+const expertise = [
+  {
+    title: "DevOps & Cloud",
+    detail: "Docker, CI/CD, Kubernetes basics, Vercel, Railway / Koyeb.",
+  },
+  {
+    title: "System Design",
+    detail: "Scalable architectures and distributed systems.",
+  },
+  {
+    title: "Testing & Quality Assurance",
+    detail: "Playwright, Vitest, pytest — reliable, well-covered code.",
+  },
+];
+
 const technologies = [
   "Next.js",
   "React",
@@ -158,6 +244,8 @@ function SectionLabel({ index, children }: { index: string; children: React.Reac
 function Index() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground antialiased">
+      <Toaster position="top-center" />
+
       {/* Nav */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -171,8 +259,8 @@ function Index() {
             <a href="#projects" className="transition-colors hover:text-foreground">
               Projects
             </a>
-            <a href="#case-studies" className="transition-colors hover:text-foreground">
-              Case Studies
+            <a href="#ai-engineering" className="transition-colors hover:text-foreground">
+              AI Engineering
             </a>
             <a href="#contact" className="transition-colors hover:text-foreground">
               Contact
@@ -183,12 +271,28 @@ function Index() {
 
       <main id="top" className="mx-auto max-w-6xl px-6">
         {/* Hero */}
-        <section className="py-24 sm:py-36">
-          <div className="max-w-3xl">
+        <section className="grid grid-cols-1 items-center gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
+          {/* Animated visual — left on desktop, below text on mobile */}
+          <div className="order-last lg:order-first">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
+              <div className="absolute -inset-6 rounded-full bg-muted/60 blur-2xl" aria-hidden />
+              <div className="animate-float">
+                <img
+                  src={heroVisual}
+                  alt="Abstract network illustration representing AI engineering"
+                  width={1024}
+                  height={1280}
+                  className="relative w-full rounded-lg border border-border object-cover shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="order-first animate-fade-up lg:order-last">
             <p className="font-sans text-sm font-medium tracking-[0.2em] text-muted-foreground">
               FULL-STACK SOFTWARE ENGINEER
             </p>
-            <h1 className="mt-6 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
+            <h1 className="mt-6 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
               Abel Tegegn
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -198,16 +302,19 @@ function Index() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#projects"
+                onClick={() => trackEvent("cta_view_projects")}
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 View Projects
               </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-              >
-                Hire Me
-              </a>
+              <HireMeDialog>
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                >
+                  Hire Me
+                </button>
+              </HireMeDialog>
             </div>
           </div>
         </section>
@@ -309,9 +416,40 @@ function Index() {
           </div>
         </section>
 
+        {/* AI Engineering */}
+        <section id="ai-engineering" className="scroll-mt-20 py-16">
+          <SectionLabel index="04">AI Engineering</SectionLabel>
+          <p className="mb-8 font-serif text-xl italic text-muted-foreground">
+            Beyond AI agents.
+          </p>
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
+            {aiCapabilities.map((cap) => (
+              <div
+                key={cap}
+                className="bg-background px-5 py-6 text-sm font-medium tracking-tight transition-colors hover:bg-muted"
+              >
+                {cap}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {expertise.map((item) => (
+              <div key={item.title} className="rounded-md border border-border bg-background p-6">
+                <h3 className="font-serif text-lg font-semibold tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Technologies */}
         <section id="technologies" className="scroll-mt-20 py-16">
-          <SectionLabel index="04">Technologies</SectionLabel>
+          <SectionLabel index="05">Technologies</SectionLabel>
           <div className="flex flex-wrap justify-center gap-3 py-6">
             {technologies.map((tech) => (
               <span
@@ -326,11 +464,21 @@ function Index() {
 
         {/* Contact */}
         <section id="contact" className="scroll-mt-20 py-16">
-          <SectionLabel index="05">Contact</SectionLabel>
+          <SectionLabel index="06">Contact</SectionLabel>
           <div className="max-w-2xl">
             <p className="font-serif text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
               Have a project in mind? Let’s build something clear and durable.
             </p>
+            <div className="mt-8">
+              <HireMeDialog>
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  Hire Me <ArrowUpRight className="h-4 w-4" />
+                </button>
+              </HireMeDialog>
+            </div>
             <ul className="mt-10 divide-y divide-border border-y border-border">
               {contacts.map(({ label, value, href, icon: Icon }) => (
                 <li key={label}>
@@ -338,6 +486,7 @@ function Index() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackEvent("contact_click", { channel: label })}
                     className="group flex items-center justify-between py-4 transition-colors hover:text-foreground"
                   >
                     <span className="flex items-center gap-3">
