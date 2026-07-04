@@ -243,11 +243,24 @@ const technologies = [
 ];
 
 const contacts = [
-  { label: "Email", value: "abel@example.com", href: "mailto:abel@example.com", icon: Mail },
-  { label: "LinkedIn", value: "/in/abeltegegn", href: "https://linkedin.com", icon: Linkedin },
-  { label: "Upwork", value: "Abel Tegegn", href: "https://upwork.com", icon: Briefcase },
-  { label: "Fiverr", value: "@abeltegegn", href: "https://fiverr.com", icon: Briefcase },
-  { label: "GitHub", value: "@abeltegegn", href: "https://github.com", icon: Github },
+  {
+    label: "Email",
+    value: "abeltegegn191@gmail.com",
+    href: "mailto:abeltegegn191@gmail.com",
+    icon: Mail,
+  },
+  {
+    label: "LinkedIn",
+    value: "/in/abel-tegegn",
+    href: "https://www.linkedin.com/in/abel-tegegn-3254a841a",
+    icon: Linkedin,
+  },
+  {
+    label: "GitHub",
+    value: "@abel-tegegn",
+    href: "https://github.com/abel-tegegn",
+    icon: Github,
+  },
 ];
 
 function Pill({ children }: { children: React.ReactNode }) {
