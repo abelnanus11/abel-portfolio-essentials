@@ -402,52 +402,45 @@ function Index() {
           <SectionLabel index="02">Featured Projects</SectionLabel>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
             {projects.map((project, i) => (
-              <Reveal
-                key={project.title}
-                delay={(i % 3) * 90}
-                className="flex"
-              >
+              <Reveal key={project.title} delay={(i % 3) * 90} className="flex">
                 <article className="flex flex-1 flex-col overflow-hidden rounded-md border border-border bg-card transition-transform duration-300 hover:-translate-y-1">
                   <ProjectCarousel images={project.images} alt={project.title} />
-                  <div className="flex flex-1 flex-col p-6"></div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-serif text-xl font-semibold tracking-tight">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {project.description}
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.stack.map((tech) => (
+                        <Pill key={tech}>{tech}</Pill>
+                      ))}
+                    </div>
+                    <div className="mt-6 flex items-center gap-5 border-t border-border pt-5">
+                      <a
+                        href={project.site}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
+                      >
+                        Visit Website <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                      <a
+                        href={project.source}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        Source <Github className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
+                  </div>
                 </article>
               </Reveal>
             ))}
           </div>
 
-                  <h3 className="font-serif text-xl font-semibold tracking-tight">
-                    {project.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {project.description}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.stack.map((tech) => (
-                      <Pill key={tech}>{tech}</Pill>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex items-center gap-5 border-t border-border pt-5">
-                    <a
-                      href={project.site}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
-                    >
-                      Visit Website <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
-                    <a
-                      href={project.source}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      Source <Github className="h-3.5 w-3.5" />
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
         </section>
 
         {/* Case Studies */}
