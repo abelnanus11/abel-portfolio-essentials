@@ -512,16 +512,17 @@ function Index() {
         {/* Technologies */}
         <section id="technologies" className="scroll-mt-20 py-16">
           <SectionLabel index="05">Technologies</SectionLabel>
-          <div className="flex flex-wrap justify-center gap-3 py-6">
+          <Reveal className="flex flex-wrap justify-center gap-3 py-6">
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="rounded-md border border-border bg-background px-5 py-2.5 font-sans text-sm font-medium tracking-wide text-foreground transition-colors hover:bg-muted"
+                className="rounded-md border border-border bg-card px-5 py-2.5 font-sans text-sm font-medium tracking-wide text-foreground transition-colors hover:bg-muted"
               >
                 {tech}
               </span>
             ))}
-          </div>
+          </Reveal>
+
         </section>
 
         {/* Contact */}
