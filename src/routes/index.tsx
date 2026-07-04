@@ -401,13 +401,20 @@ function Index() {
         <section id="projects" className="scroll-mt-20 py-16">
           <SectionLabel index="02">Featured Projects</SectionLabel>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
-            {projects.map((project) => (
-              <article
+            {projects.map((project, i) => (
+              <Reveal
                 key={project.title}
-                className="flex flex-col overflow-hidden rounded-md border border-border bg-background"
+                delay={(i % 3) * 90}
+                className="flex"
               >
-                <ProjectCarousel images={project.images} alt={project.title} />
-                <div className="flex flex-1 flex-col p-6">
+                <article className="flex flex-1 flex-col overflow-hidden rounded-md border border-border bg-card transition-transform duration-300 hover:-translate-y-1">
+                  <ProjectCarousel images={project.images} alt={project.title} />
+                  <div className="flex flex-1 flex-col p-6"></div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
                   <h3 className="font-serif text-xl font-semibold tracking-tight">
                     {project.title}
                   </h3>
