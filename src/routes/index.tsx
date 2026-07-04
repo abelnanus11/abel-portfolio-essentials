@@ -474,7 +474,7 @@ function Index() {
                 </dl>
               </div>
             ))}
-          </div>
+          </Reveal>
         </section>
 
         {/* AI Engineering */}
