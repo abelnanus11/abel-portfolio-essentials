@@ -483,20 +483,20 @@ function Index() {
           <p className="mb-8 font-serif text-xl italic text-muted-foreground">
             Beyond AI agents.
           </p>
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
+          <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
             {aiCapabilities.map((cap) => (
               <div
                 key={cap}
-                className="bg-background px-5 py-6 text-sm font-medium tracking-tight transition-colors hover:bg-muted"
+                className="bg-card px-5 py-6 text-sm font-medium tracking-tight transition-colors hover:bg-muted"
               >
                 {cap}
               </div>
             ))}
-          </div>
+          </Reveal>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <Reveal className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {expertise.map((item) => (
-              <div key={item.title} className="rounded-md border border-border bg-background p-6">
+              <div key={item.title} className="rounded-md border border-border bg-card p-6">
                 <h3 className="font-serif text-lg font-semibold tracking-tight">
                   {item.title}
                 </h3>
@@ -505,7 +505,8 @@ function Index() {
                 </p>
               </div>
             ))}
-          </div>
+          </Reveal>
+
         </section>
 
         {/* Technologies */}
