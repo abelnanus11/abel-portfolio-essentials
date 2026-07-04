@@ -10,9 +10,11 @@ import {
 import { Toaster } from "@/components/ui/sonner";
 import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { HireMeDialog } from "@/components/HireMeDialog";
+import { Reveal } from "@/components/Reveal";
+import { CertificateMarquee } from "@/components/CertificateMarquee";
 import { trackEvent } from "@/lib/analytics";
 
-import heroVisual from "@/assets/hero-visual.jpg";
+import heroGlass from "@/assets/hero-glass.jpg";
 import proj1a from "@/assets/proj1-1.jpg";
 import proj1b from "@/assets/proj1-2.jpg";
 import proj1c from "@/assets/proj1-3.jpg";
