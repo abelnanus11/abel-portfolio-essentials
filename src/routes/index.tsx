@@ -5,14 +5,16 @@ import {
   Mail,
   Linkedin,
   ExternalLink,
-  Briefcase,
+
 } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { HireMeDialog } from "@/components/HireMeDialog";
+import { Reveal } from "@/components/Reveal";
+import { CertificateMarquee } from "@/components/CertificateMarquee";
 import { trackEvent } from "@/lib/analytics";
 
-import heroVisual from "@/assets/hero-visual.jpg";
+import heroGlass from "@/assets/hero-glass.jpg";
 import proj1a from "@/assets/proj1-1.jpg";
 import proj1b from "@/assets/proj1-2.jpg";
 import proj1c from "@/assets/proj1-3.jpg";
@@ -121,7 +123,35 @@ const projects = [
     site: "https://example.com",
     source: "https://github.com",
   },
+  {
+    title: "Nimbus SaaS Dashboard",
+    description:
+      "A real-time analytics dashboard with role-based access, live charts and a fast, keyboard-driven interface for busy teams.",
+    stack: ["React", "TypeScript", "Node", "Postgres", "Redis"],
+    images: [proj1c, proj2a, proj3b, proj1d],
+    site: "https://example.com",
+    source: "https://github.com",
+  },
+  {
+    title: "Verse Content API",
+    description:
+      "A scalable headless CMS and content API powering multiple frontends with edge caching and granular versioning.",
+    stack: ["Go", "FastAPI", "Postgres", "Docker", "Redis"],
+    images: [proj2c, proj3a, proj1b, proj2d],
+    site: "https://example.com",
+    source: "https://github.com",
+  },
+  {
+    title: "Aurora Booking Platform",
+    description:
+      "A booking and scheduling platform with conflict-free reservations, payments and automated email workflows.",
+    stack: ["Next.js", "Stripe", "Node", "Postgres", "Tailwind"],
+    images: [proj3c, proj1a, proj2b, proj3d],
+    site: "https://example.com",
+    source: "https://github.com",
+  },
 ];
+
 
 const caseStudies = [
   {
@@ -213,11 +243,24 @@ const technologies = [
 ];
 
 const contacts = [
-  { label: "Email", value: "abel@example.com", href: "mailto:abel@example.com", icon: Mail },
-  { label: "LinkedIn", value: "/in/abeltegegn", href: "https://linkedin.com", icon: Linkedin },
-  { label: "Upwork", value: "Abel Tegegn", href: "https://upwork.com", icon: Briefcase },
-  { label: "Fiverr", value: "@abeltegegn", href: "https://fiverr.com", icon: Briefcase },
-  { label: "GitHub", value: "@abeltegegn", href: "https://github.com", icon: Github },
+  {
+    label: "Email",
+    value: "abeltegegn191@gmail.com",
+    href: "mailto:abeltegegn191@gmail.com",
+    icon: Mail,
+  },
+  {
+    label: "LinkedIn",
+    value: "/in/abel-tegegn",
+    href: "https://www.linkedin.com/in/abel-tegegn-3254a841a",
+    icon: Linkedin,
+  },
+  {
+    label: "GitHub",
+    value: "@abel-tegegn",
+    href: "https://github.com/abel-tegegn",
+    icon: Github,
+  },
 ];
 
 function Pill({ children }: { children: React.ReactNode }) {
@@ -271,39 +314,30 @@ function Index() {
 
       <main id="top" className="mx-auto max-w-6xl px-6">
         {/* Hero */}
-        <section className="grid grid-cols-1 items-center gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
-          {/* Animated visual — left on desktop, below text on mobile */}
-          <div className="order-last lg:order-first">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-              <div className="absolute -inset-6 rounded-full bg-muted/60 blur-2xl" aria-hidden />
-              <div className="animate-float">
-                <img
-                  src={heroVisual}
-                  alt="Abstract network illustration representing AI engineering"
-                  width={1024}
-                  height={1280}
-                  className="relative w-full rounded-lg border border-border object-cover shadow-sm"
-                />
-              </div>
-            </div>
-          </div>
+        <section className="relative grid grid-cols-1 items-center gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
+          {/* ambient purple glow */}
+          <div
+            className="pointer-events-none absolute right-0 top-1/2 -z-10 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary/25 blur-[120px]"
+            aria-hidden
+          />
 
-          <div className="order-first animate-fade-up lg:order-last">
-            <p className="font-sans text-sm font-medium tracking-[0.2em] text-muted-foreground">
-              FULL-STACK SOFTWARE ENGINEER
+          <div className="order-first animate-fade-up">
+            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> AVAILABLE FOR WORK
             </p>
-            <h1 className="mt-6 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
-              Abel Tegegn
+            <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
+              Transform your ideas into digital success
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              I build modern web applications, AI integrations, WordPress websites,
-              and scalable backend systems.
+              I'm Abel Tegegn — a Full-Stack Software Engineer building modern web
+              applications, AI integrations, WordPress websites, and scalable backend
+              systems.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#projects"
                 onClick={() => trackEvent("cta_view_projects")}
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-colors hover:bg-primary/90"
               >
                 View Projects
               </a>
@@ -317,80 +351,107 @@ function Index() {
               </HireMeDialog>
             </div>
           </div>
+
+          {/* Animated glass visual — right on desktop, below text on mobile */}
+          <div className="order-last">
+            <div className="relative mx-auto aspect-square w-full max-w-lg">
+              <div className="animate-float">
+                <img
+                  src={heroGlass}
+                  alt="Abstract purple glass sculpture representing engineering craft"
+                  width={1024}
+                  height={1024}
+                  className="relative w-full object-contain drop-shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
         </section>
+
+        {/* Certifications marquee */}
+        <section aria-label="Certifications" className="border-y border-border py-8">
+          <p className="mb-6 text-center font-sans text-xs font-medium tracking-[0.2em] text-muted-foreground">
+            CERTIFIED BY INDUSTRY LEADERS
+          </p>
+          <CertificateMarquee />
+        </section>
+
 
         {/* Services */}
         <section id="services" className="scroll-mt-20 py-16">
           <SectionLabel index="01">Services</SectionLabel>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service, i) => (
-              <div
-                key={service}
-                className="group flex flex-col justify-between bg-background p-6 transition-colors hover:bg-muted"
-              >
-                <span className="font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-10 font-serif text-lg font-medium tracking-tight">
-                  {service}
-                </h3>
-              </div>
-            ))}
-          </div>
+          <Reveal>
+            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+              {services.map((service, i) => (
+                <div
+                  key={service}
+                  className="group flex flex-col justify-between bg-card p-6 transition-colors hover:bg-muted"
+                >
+                  <span className="font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-10 font-serif text-lg font-medium tracking-tight">
+                    {service}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
         </section>
 
         {/* Projects */}
         <section id="projects" className="scroll-mt-20 py-16">
           <SectionLabel index="02">Featured Projects</SectionLabel>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
-            {projects.map((project) => (
-              <article
-                key={project.title}
-                className="flex flex-col overflow-hidden rounded-md border border-border bg-background"
-              >
-                <ProjectCarousel images={project.images} alt={project.title} />
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-serif text-xl font-semibold tracking-tight">
-                    {project.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {project.description}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.stack.map((tech) => (
-                      <Pill key={tech}>{tech}</Pill>
-                    ))}
+            {projects.map((project, i) => (
+              <Reveal key={project.title} delay={(i % 3) * 90} className="flex">
+                <article className="flex flex-1 flex-col overflow-hidden rounded-md border border-border bg-card transition-transform duration-300 hover:-translate-y-1">
+                  <ProjectCarousel images={project.images} alt={project.title} />
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-serif text-xl font-semibold tracking-tight">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {project.description}
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.stack.map((tech) => (
+                        <Pill key={tech}>{tech}</Pill>
+                      ))}
+                    </div>
+                    <div className="mt-6 flex items-center gap-5 border-t border-border pt-5">
+                      <a
+                        href={project.site}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
+                      >
+                        Visit Website <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                      <a
+                        href={project.source}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        Source <Github className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
                   </div>
-                  <div className="mt-6 flex items-center gap-5 border-t border-border pt-5">
-                    <a
-                      href={project.site}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
-                    >
-                      Visit Website <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
-                    <a
-                      href={project.source}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      Source <Github className="h-3.5 w-3.5" />
-                    </a>
-                  </div>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
+
         </section>
 
         {/* Case Studies */}
         <section id="case-studies" className="scroll-mt-20 py-16">
           <SectionLabel index="03">Case Studies</SectionLabel>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
+          <Reveal className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
             {caseStudies.map((cs) => (
-              <div key={cs.title} className="bg-background p-8">
+              <div key={cs.title} className="bg-card p-8">
                 <h3 className="font-serif text-xl font-semibold tracking-tight">
                   {cs.title}
                 </h3>
@@ -413,7 +474,7 @@ function Index() {
                 </dl>
               </div>
             ))}
-          </div>
+          </Reveal>
         </section>
 
         {/* AI Engineering */}
@@ -422,20 +483,20 @@ function Index() {
           <p className="mb-8 font-serif text-xl italic text-muted-foreground">
             Beyond AI agents.
           </p>
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
+          <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
             {aiCapabilities.map((cap) => (
               <div
                 key={cap}
-                className="bg-background px-5 py-6 text-sm font-medium tracking-tight transition-colors hover:bg-muted"
+                className="bg-card px-5 py-6 text-sm font-medium tracking-tight transition-colors hover:bg-muted"
               >
                 {cap}
               </div>
             ))}
-          </div>
+          </Reveal>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <Reveal className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {expertise.map((item) => (
-              <div key={item.title} className="rounded-md border border-border bg-background p-6">
+              <div key={item.title} className="rounded-md border border-border bg-card p-6">
                 <h3 className="font-serif text-lg font-semibold tracking-tight">
                   {item.title}
                 </h3>
@@ -444,22 +505,24 @@ function Index() {
                 </p>
               </div>
             ))}
-          </div>
+          </Reveal>
+
         </section>
 
         {/* Technologies */}
         <section id="technologies" className="scroll-mt-20 py-16">
           <SectionLabel index="05">Technologies</SectionLabel>
-          <div className="flex flex-wrap justify-center gap-3 py-6">
+          <Reveal className="flex flex-wrap justify-center gap-3 py-6">
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="rounded-md border border-border bg-background px-5 py-2.5 font-sans text-sm font-medium tracking-wide text-foreground transition-colors hover:bg-muted"
+                className="rounded-md border border-border bg-card px-5 py-2.5 font-sans text-sm font-medium tracking-wide text-foreground transition-colors hover:bg-muted"
               >
                 {tech}
               </span>
             ))}
-          </div>
+          </Reveal>
+
         </section>
 
         {/* Contact */}
