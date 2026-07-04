@@ -35,7 +35,7 @@ const schema = z.object({
     .max(2000, { message: "Message is too long (2000 char max)" }),
 });
 
-const CONTACT_EMAIL = "abel@example.com";
+const CONTACT_EMAIL = "abeltegegn191@gmail.com";
 
 export function HireMeDialog({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
