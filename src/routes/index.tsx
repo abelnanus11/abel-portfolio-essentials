@@ -301,39 +301,30 @@ function Index() {
 
       <main id="top" className="mx-auto max-w-6xl px-6">
         {/* Hero */}
-        <section className="grid grid-cols-1 items-center gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
-          {/* Animated visual — left on desktop, below text on mobile */}
-          <div className="order-last lg:order-first">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-              <div className="absolute -inset-6 rounded-full bg-muted/60 blur-2xl" aria-hidden />
-              <div className="animate-float">
-                <img
-                  src={heroVisual}
-                  alt="Abstract network illustration representing AI engineering"
-                  width={1024}
-                  height={1280}
-                  className="relative w-full rounded-lg border border-border object-cover shadow-sm"
-                />
-              </div>
-            </div>
-          </div>
+        <section className="relative grid grid-cols-1 items-center gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
+          {/* ambient purple glow */}
+          <div
+            className="pointer-events-none absolute right-0 top-1/2 -z-10 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary/25 blur-[120px]"
+            aria-hidden
+          />
 
-          <div className="order-first animate-fade-up lg:order-last">
-            <p className="font-sans text-sm font-medium tracking-[0.2em] text-muted-foreground">
-              FULL-STACK SOFTWARE ENGINEER
+          <div className="order-first animate-fade-up">
+            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> AVAILABLE FOR WORK
             </p>
-            <h1 className="mt-6 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
-              Abel Tegegn
+            <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
+              Transform your ideas into digital success
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              I build modern web applications, AI integrations, WordPress websites,
-              and scalable backend systems.
+              I'm Abel Tegegn — a Full-Stack Software Engineer building modern web
+              applications, AI integrations, WordPress websites, and scalable backend
+              systems.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#projects"
                 onClick={() => trackEvent("cta_view_projects")}
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-colors hover:bg-primary/90"
               >
                 View Projects
               </a>
@@ -347,7 +338,31 @@ function Index() {
               </HireMeDialog>
             </div>
           </div>
+
+          {/* Animated glass visual — right on desktop, below text on mobile */}
+          <div className="order-last">
+            <div className="relative mx-auto aspect-square w-full max-w-lg">
+              <div className="animate-float">
+                <img
+                  src={heroGlass}
+                  alt="Abstract purple glass sculpture representing engineering craft"
+                  width={1024}
+                  height={1024}
+                  className="relative w-full object-contain drop-shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
         </section>
+
+        {/* Certifications marquee */}
+        <section aria-label="Certifications" className="border-y border-border py-8">
+          <p className="mb-6 text-center font-sans text-xs font-medium tracking-[0.2em] text-muted-foreground">
+            CERTIFIED BY INDUSTRY LEADERS
+          </p>
+          <CertificateMarquee />
+        </section>
+
 
         {/* Services */}
         <section id="services" className="scroll-mt-20 py-16">
