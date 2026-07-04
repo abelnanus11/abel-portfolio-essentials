@@ -5,7 +5,7 @@ import {
   Mail,
   Linkedin,
   ExternalLink,
-  Briefcase,
+
 } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { ProjectCarousel } from "@/components/ProjectCarousel";
