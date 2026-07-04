@@ -380,21 +380,24 @@ function Index() {
         {/* Services */}
         <section id="services" className="scroll-mt-20 py-16">
           <SectionLabel index="01">Services</SectionLabel>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service, i) => (
-              <div
-                key={service}
-                className="group flex flex-col justify-between bg-background p-6 transition-colors hover:bg-muted"
-              >
-                <span className="font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-10 font-serif text-lg font-medium tracking-tight">
-                  {service}
-                </h3>
-              </div>
-            ))}
-          </div>
+          <Reveal>
+            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+              {services.map((service, i) => (
+                <div
+                  key={service}
+                  className="group flex flex-col justify-between bg-card p-6 transition-colors hover:bg-muted"
+                >
+                  <span className="font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-10 font-serif text-lg font-medium tracking-tight">
+                    {service}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
         </section>
 
         {/* Projects */}
