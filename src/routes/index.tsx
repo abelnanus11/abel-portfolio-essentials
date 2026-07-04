@@ -449,9 +449,9 @@ function Index() {
         {/* Case Studies */}
         <section id="case-studies" className="scroll-mt-20 py-16">
           <SectionLabel index="03">Case Studies</SectionLabel>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
+          <Reveal className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
             {caseStudies.map((cs) => (
-              <div key={cs.title} className="bg-background p-8">
+              <div key={cs.title} className="bg-card p-8">
                 <h3 className="font-serif text-xl font-semibold tracking-tight">
                   {cs.title}
                 </h3>
