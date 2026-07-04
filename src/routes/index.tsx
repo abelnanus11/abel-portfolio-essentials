@@ -123,7 +123,35 @@ const projects = [
     site: "https://example.com",
     source: "https://github.com",
   },
+  {
+    title: "Nimbus SaaS Dashboard",
+    description:
+      "A real-time analytics dashboard with role-based access, live charts and a fast, keyboard-driven interface for busy teams.",
+    stack: ["React", "TypeScript", "Node", "Postgres", "Redis"],
+    images: [proj1c, proj2a, proj3b, proj1d],
+    site: "https://example.com",
+    source: "https://github.com",
+  },
+  {
+    title: "Verse Content API",
+    description:
+      "A scalable headless CMS and content API powering multiple frontends with edge caching and granular versioning.",
+    stack: ["Go", "FastAPI", "Postgres", "Docker", "Redis"],
+    images: [proj2c, proj3a, proj1b, proj2d],
+    site: "https://example.com",
+    source: "https://github.com",
+  },
+  {
+    title: "Aurora Booking Platform",
+    description:
+      "A booking and scheduling platform with conflict-free reservations, payments and automated email workflows.",
+    stack: ["Next.js", "Stripe", "Node", "Postgres", "Tailwind"],
+    images: [proj3c, proj1a, proj2b, proj3d],
+    site: "https://example.com",
+    source: "https://github.com",
+  },
 ];
+
 
 const caseStudies = [
   {
