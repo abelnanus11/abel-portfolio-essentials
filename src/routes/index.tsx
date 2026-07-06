@@ -85,14 +85,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  "AI Applications",
-  "WordPress Development",
-  "Next.js Websites",
-  "Custom Web Applications",
-  "API Development",
-  "Website Redesign",
-  "Hosting & Deployment",
-  "Automation",
+  "AI Applications & Agentic Workflows",
+  "Custom Web Applications (Next.js & TypeScript)",
+  "Scalable API & Backend Systems",
+  "Automation Pipelines & Tooling",
+  "Cloud Native Deployment & DevOps",
+  "High-Density System Architecture & Testing",
 ];
 
 const projects = [
@@ -136,7 +134,7 @@ const projects = [
     title: "Verse Content API",
     description:
       "A scalable headless CMS and content API powering multiple frontends with edge caching and granular versioning.",
-    stack: ["Go", "FastAPI", "Postgres", "Docker", "Redis"],
+    stack: ["Python (FastAPI)", "Postgres", "Docker", "Redis"],
     images: [proj2c, proj3a, proj1b, proj2d],
     site: "https://example.com",
     source: "https://github.com",
@@ -180,7 +178,7 @@ const caseStudies = [
       "A media company manually reformatted and published dozens of articles daily across multiple channels.",
     solution:
       "Designed an automation pipeline that ingests drafts, formats content and syncs publishing across WordPress and social channels.",
-    technologies: "Python, WordPress REST API, Go, Docker",
+    technologies: "Python, WordPress REST API, Docker, CI/CD",
     result:
       "Eliminated ~30 hours of manual work per week and removed publishing errors entirely.",
   },
@@ -196,33 +194,42 @@ const caseStudies = [
   },
 ];
 
-const aiCapabilities = [
-  "RAG",
-  "Prompt Engineering",
-  "LLM Evaluation",
-  "AI Model Fine-tuning",
-  "MCP (Model Context Protocol)",
-  "AI Chatbots",
-  "Multi-modal AI",
-  "AI Search",
-  "AI Workflows",
-  "AI Guardrails",
-  "AI Testing",
-  "AI Observability",
-];
-
-const expertise = [
+const competencies = [
   {
-    title: "DevOps & Cloud",
-    detail: "Docker, CI/CD, Kubernetes basics, Vercel, Railway / Koyeb.",
+    title: "AI & Data Engineering",
+    items: [
+      "RAG",
+      "Prompt Engineering",
+      "LLM Evaluation",
+      "AI Observability",
+      "Data Quality Engineering & Fine-tuning",
+      "MCP",
+      "AI Guardrails",
+    ],
   },
   {
-    title: "System Design",
-    detail: "Scalable architectures and distributed systems.",
+    title: "Systems & Backend",
+    items: [
+      "Pure Python / Sans-I/O State Machines",
+      "Go",
+      "Node.js",
+      "FastAPI",
+      "Scalable Distributed Architectures",
+    ],
   },
   {
-    title: "Testing & Quality Assurance",
-    detail: "Playwright, Vitest, pytest — reliable, well-covered code.",
+    title: "Quality & Cloud",
+    items: [
+      "Test-Driven Development",
+      "Playwright",
+      "Vitest",
+      "pytest",
+      "Docker",
+      "Kubernetes Containerization",
+      "CI/CD Pipelines",
+      "Vercel",
+      "Railway",
+    ],
   },
 ];
 
@@ -329,9 +336,10 @@ function Index() {
               Transform your ideas into digital success
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              I'm Abel Tegegn — a Full-Stack Software Engineer building modern web
-              applications, AI integrations, WordPress websites, and scalable backend
-              systems.
+              I'm Abel Tegegn — a Full-Stack Software Engineer specializing in
+              scalable backend architectures, Sans-I/O Python development, robust AI
+              integrations (RAG, Evaluation, MCP), and high-performance Next.js
+              applications.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
@@ -381,22 +389,23 @@ function Index() {
         <section id="services" className="scroll-mt-20 py-16">
           <SectionLabel index="01">Services</SectionLabel>
           <Reveal>
-            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, i) => (
                 <div
                   key={service}
-                  className="group flex flex-col justify-between bg-card p-6 transition-colors hover:bg-muted"
+                  className="group flex flex-col justify-between gap-10 bg-card p-6 transition-colors hover:bg-muted"
                 >
-                  <span className="font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
-                    {String(i + 1).padStart(2, "0")}
+                  <span className="font-sans text-xs font-medium tracking-[0.2em] text-primary">
+                    {String(i + 1).padStart(2, "0")} /
                   </span>
-                  <h3 className="mt-10 font-serif text-lg font-medium tracking-tight">
+                  <h3 className="font-serif text-lg font-medium tracking-tight">
                     {service}
                   </h3>
                 </div>
               ))}
             </div>
           </Reveal>
+
 
         </section>
 
@@ -406,12 +415,19 @@ function Index() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
             {projects.map((project, i) => (
               <Reveal key={project.title} delay={(i % 3) * 90} className="flex">
-                <article className="flex flex-1 flex-col overflow-hidden rounded-md border border-border bg-card transition-transform duration-300 hover:-translate-y-1">
-                  <ProjectCarousel images={project.images} alt={project.title} />
+                <article className="group flex flex-1 flex-col overflow-hidden border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-[0_0_40px_-12px] hover:shadow-primary/40">
+                  <div className="overflow-hidden">
+                    <div className="transition-transform duration-500 group-hover:scale-105">
+                      <ProjectCarousel images={project.images} alt={project.title} />
+                    </div>
+                  </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-serif text-xl font-semibold tracking-tight">
+                    <h3 className="font-serif text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
                       {project.title}
                     </h3>
+                    <span className="mt-3 inline-flex w-fit items-center gap-1.5 border border-primary/30 bg-primary/10 px-2 py-1 text-[10px] font-medium tracking-wide text-primary">
+                      TDD & 95%+ Code Coverage
+                    </span>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {project.description}
                     </p>
@@ -449,10 +465,13 @@ function Index() {
         {/* Case Studies */}
         <section id="case-studies" className="scroll-mt-20 py-16">
           <SectionLabel index="03">Case Studies</SectionLabel>
-          <Reveal className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
+          <Reveal className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {caseStudies.map((cs) => (
-              <div key={cs.title} className="bg-card p-8">
-                <h3 className="font-serif text-xl font-semibold tracking-tight">
+              <div
+                key={cs.title}
+                className="group flex flex-col border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_40px_-14px] hover:shadow-primary/40"
+              >
+                <h3 className="font-serif text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
                   {cs.title}
                 </h3>
                 <dl className="mt-6 space-y-5">
@@ -463,7 +482,7 @@ function Index() {
                     ["Result", cs.result],
                   ].map(([term, desc]) => (
                     <div key={term}>
-                      <dt className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-foreground">
+                      <dt className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-primary">
                         {term}
                       </dt>
                       <dd className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
@@ -477,36 +496,32 @@ function Index() {
           </Reveal>
         </section>
 
-        {/* AI Engineering */}
+        {/* AI Engineering & Core Competencies */}
         <section id="ai-engineering" className="scroll-mt-20 py-16">
-          <SectionLabel index="04">AI Engineering</SectionLabel>
+          <SectionLabel index="04">AI Engineering & Core Competencies</SectionLabel>
           <p className="mb-8 font-serif text-xl italic text-muted-foreground">
             Beyond AI agents.
           </p>
-          <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
-            {aiCapabilities.map((cap) => (
-              <div
-                key={cap}
-                className="bg-card px-5 py-6 text-sm font-medium tracking-tight transition-colors hover:bg-muted"
-              >
-                {cap}
-              </div>
-            ))}
-          </Reveal>
-
-          <Reveal className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {expertise.map((item) => (
-              <div key={item.title} className="rounded-md border border-border bg-card p-6">
-                <h3 className="font-serif text-lg font-semibold tracking-tight">
-                  {item.title}
+          <Reveal className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
+            {competencies.map((col) => (
+              <div key={col.title} className="bg-card p-8">
+                <h3 className="font-serif text-lg font-semibold tracking-tight text-primary">
+                  {col.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {item.detail}
-                </p>
+                <ul className="mt-6 space-y-3">
+                  {col.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span className="mt-2 h-1 w-1 shrink-0 bg-primary" aria-hidden />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </Reveal>
-
         </section>
 
         {/* Technologies */}
@@ -575,7 +590,7 @@ function Index() {
           <span className="font-serif text-base font-medium text-foreground">
             Abel Tegegn
           </span>
-          <span>© {new Date().getFullYear()} — Full-Stack Software Engineer</span>
+          <span>© 2026 Abel Tegegn — Crafting Durable, High-Performance Systems.</span>
         </div>
       </footer>
     </div>
