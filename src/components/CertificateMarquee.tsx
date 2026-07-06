@@ -7,8 +7,8 @@ const certificates = [
 
 function CertCard({ name, detail }: { name: string; detail: string }) {
   return (
-    <div className="flex min-w-[240px] items-center gap-4 rounded-xl border border-border bg-card px-6 py-5">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/15 font-serif text-lg font-semibold text-primary">
+    <div className="flex min-w-[240px] items-center gap-4 border border-border bg-card px-6 py-5">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-primary/40 bg-primary/10 font-serif text-lg font-semibold text-primary">
         {name.charAt(0)}
       </div>
       <div>
