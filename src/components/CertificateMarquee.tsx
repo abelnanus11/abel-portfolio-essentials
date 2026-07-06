@@ -20,15 +20,18 @@ function CertCard({ name, detail }: { name: string; detail: string }) {
 }
 
 export function CertificateMarquee() {
-  const items = [...certificates, ...certificates];
   return (
     <div className="group relative overflow-hidden py-4">
       {/* edge fades */}
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
-      <div className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]">
-        {items.map((c, i) => (
-          <CertCard key={`${c.name}-${i}`} name={c.name} detail={c.detail} />
+      <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+        {[0, 1].map((group) => (
+          <div key={group} className="flex shrink-0 gap-6 pr-6" aria-hidden={group === 1}>
+            {certificates.map((c, i) => (
+              <CertCard key={`${group}-${c.name}-${i}`} name={c.name} detail={c.detail} />
+            ))}
+          </div>
         ))}
       </div>
     </div>
