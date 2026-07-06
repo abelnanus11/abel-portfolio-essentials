@@ -85,14 +85,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  "AI Applications",
-  "WordPress Development",
-  "Next.js Websites",
-  "Custom Web Applications",
-  "API Development",
-  "Website Redesign",
-  "Hosting & Deployment",
-  "Automation",
+  "AI Applications & Agentic Workflows",
+  "Custom Web Applications (Next.js & TypeScript)",
+  "Scalable API & Backend Systems",
+  "Automation Pipelines & Tooling",
+  "Cloud Native Deployment & DevOps",
+  "High-Density System Architecture & Testing",
 ];
 
 const projects = [
