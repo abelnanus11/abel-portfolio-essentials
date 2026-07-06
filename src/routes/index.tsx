@@ -134,7 +134,7 @@ const projects = [
     title: "Verse Content API",
     description:
       "A scalable headless CMS and content API powering multiple frontends with edge caching and granular versioning.",
-    stack: ["Go", "FastAPI", "Postgres", "Docker", "Redis"],
+    stack: ["Python (FastAPI)", "Postgres", "Docker", "Redis"],
     images: [proj2c, proj3a, proj1b, proj2d],
     site: "https://example.com",
     source: "https://github.com",
@@ -178,7 +178,7 @@ const caseStudies = [
       "A media company manually reformatted and published dozens of articles daily across multiple channels.",
     solution:
       "Designed an automation pipeline that ingests drafts, formats content and syncs publishing across WordPress and social channels.",
-    technologies: "Python, WordPress REST API, Go, Docker",
+    technologies: "Python, WordPress REST API, Docker, CI/CD",
     result:
       "Eliminated ~30 hours of manual work per week and removed publishing errors entirely.",
   },
