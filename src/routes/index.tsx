@@ -194,33 +194,42 @@ const caseStudies = [
   },
 ];
 
-const aiCapabilities = [
-  "RAG",
-  "Prompt Engineering",
-  "LLM Evaluation",
-  "AI Model Fine-tuning",
-  "MCP (Model Context Protocol)",
-  "AI Chatbots",
-  "Multi-modal AI",
-  "AI Search",
-  "AI Workflows",
-  "AI Guardrails",
-  "AI Testing",
-  "AI Observability",
-];
-
-const expertise = [
+const competencies = [
   {
-    title: "DevOps & Cloud",
-    detail: "Docker, CI/CD, Kubernetes basics, Vercel, Railway / Koyeb.",
+    title: "AI & Data Engineering",
+    items: [
+      "RAG",
+      "Prompt Engineering",
+      "LLM Evaluation",
+      "AI Observability",
+      "Data Quality Engineering & Fine-tuning",
+      "MCP",
+      "AI Guardrails",
+    ],
   },
   {
-    title: "System Design",
-    detail: "Scalable architectures and distributed systems.",
+    title: "Systems & Backend",
+    items: [
+      "Pure Python / Sans-I/O State Machines",
+      "Go",
+      "Node.js",
+      "FastAPI",
+      "Scalable Distributed Architectures",
+    ],
   },
   {
-    title: "Testing & Quality Assurance",
-    detail: "Playwright, Vitest, pytest — reliable, well-covered code.",
+    title: "Quality & Cloud",
+    items: [
+      "Test-Driven Development",
+      "Playwright",
+      "Vitest",
+      "pytest",
+      "Docker",
+      "Kubernetes Containerization",
+      "CI/CD Pipelines",
+      "Vercel",
+      "Railway",
+    ],
   },
 ];
 
