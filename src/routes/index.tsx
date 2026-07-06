@@ -590,7 +590,7 @@ function Index() {
           <span className="font-serif text-base font-medium text-foreground">
             Abel Tegegn
           </span>
-          <span>© {new Date().getFullYear()} — Full-Stack Software Engineer</span>
+          <span>© 2026 Abel Tegegn — Crafting Durable, High-Performance Systems.</span>
         </div>
       </footer>
     </div>
