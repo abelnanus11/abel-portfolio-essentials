@@ -415,12 +415,19 @@ function Index() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
             {projects.map((project, i) => (
               <Reveal key={project.title} delay={(i % 3) * 90} className="flex">
-                <article className="flex flex-1 flex-col overflow-hidden rounded-md border border-border bg-card transition-transform duration-300 hover:-translate-y-1">
-                  <ProjectCarousel images={project.images} alt={project.title} />
+                <article className="group flex flex-1 flex-col overflow-hidden border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-[0_0_40px_-12px] hover:shadow-primary/40">
+                  <div className="overflow-hidden">
+                    <div className="transition-transform duration-500 group-hover:scale-105">
+                      <ProjectCarousel images={project.images} alt={project.title} />
+                    </div>
+                  </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-serif text-xl font-semibold tracking-tight">
+                    <h3 className="font-serif text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
                       {project.title}
                     </h3>
+                    <span className="mt-3 inline-flex w-fit items-center gap-1.5 border border-primary/30 bg-primary/10 px-2 py-1 text-[10px] font-medium tracking-wide text-primary">
+                      TDD & 95%+ Code Coverage
+                    </span>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {project.description}
                     </p>
