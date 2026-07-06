@@ -465,10 +465,13 @@ function Index() {
         {/* Case Studies */}
         <section id="case-studies" className="scroll-mt-20 py-16">
           <SectionLabel index="03">Case Studies</SectionLabel>
-          <Reveal className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
+          <Reveal className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {caseStudies.map((cs) => (
-              <div key={cs.title} className="bg-card p-8">
-                <h3 className="font-serif text-xl font-semibold tracking-tight">
+              <div
+                key={cs.title}
+                className="group flex flex-col border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_40px_-14px] hover:shadow-primary/40"
+              >
+                <h3 className="font-serif text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
                   {cs.title}
                 </h3>
                 <dl className="mt-6 space-y-5">
@@ -479,7 +482,7 @@ function Index() {
                     ["Result", cs.result],
                   ].map(([term, desc]) => (
                     <div key={term}>
-                      <dt className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-foreground">
+                      <dt className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-primary">
                         {term}
                       </dt>
                       <dd className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
