@@ -336,9 +336,10 @@ function Index() {
               Transform your ideas into digital success
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              I'm Abel Tegegn — a Full-Stack Software Engineer building modern web
-              applications, AI integrations, WordPress websites, and scalable backend
-              systems.
+              I'm Abel Tegegn — a Full-Stack Software Engineer specializing in
+              scalable backend architectures, Sans-I/O Python development, robust AI
+              integrations (RAG, Evaluation, MCP), and high-performance Next.js
+              applications.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
