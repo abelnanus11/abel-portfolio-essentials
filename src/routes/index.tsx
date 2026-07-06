@@ -485,36 +485,32 @@ function Index() {
           </Reveal>
         </section>
 
-        {/* AI Engineering */}
+        {/* AI Engineering & Core Competencies */}
         <section id="ai-engineering" className="scroll-mt-20 py-16">
-          <SectionLabel index="04">AI Engineering</SectionLabel>
+          <SectionLabel index="04">AI Engineering & Core Competencies</SectionLabel>
           <p className="mb-8 font-serif text-xl italic text-muted-foreground">
             Beyond AI agents.
           </p>
-          <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
-            {aiCapabilities.map((cap) => (
-              <div
-                key={cap}
-                className="bg-card px-5 py-6 text-sm font-medium tracking-tight transition-colors hover:bg-muted"
-              >
-                {cap}
-              </div>
-            ))}
-          </Reveal>
-
-          <Reveal className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {expertise.map((item) => (
-              <div key={item.title} className="rounded-md border border-border bg-card p-6">
-                <h3 className="font-serif text-lg font-semibold tracking-tight">
-                  {item.title}
+          <Reveal className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
+            {competencies.map((col) => (
+              <div key={col.title} className="bg-card p-8">
+                <h3 className="font-serif text-lg font-semibold tracking-tight text-primary">
+                  {col.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {item.detail}
-                </p>
+                <ul className="mt-6 space-y-3">
+                  {col.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span className="mt-2 h-1 w-1 shrink-0 bg-primary" aria-hidden />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </Reveal>
-
         </section>
 
         {/* Technologies */}
