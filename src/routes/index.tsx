@@ -589,7 +589,7 @@ function Index() {
 
         {/* Contact */}
         <section id="contact" className="scroll-mt-20 py-16">
-          <SectionLabel index="06">Contact</SectionLabel>
+          <SectionLabel index="07">Contact</SectionLabel>
           <div className="max-w-2xl">
             <p className="font-serif text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
               Have a project in mind? Let’s build something clear and durable.
