@@ -5,6 +5,8 @@ import {
   Mail,
   Linkedin,
   ExternalLink,
+  Sparkles,
+
 
 } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
@@ -14,7 +16,7 @@ import { Reveal } from "@/components/Reveal";
 import { CertificateMarquee } from "@/components/CertificateMarquee";
 import { trackEvent } from "@/lib/analytics";
 
-import heroGlass from "@/assets/hero-glass.jpg";
+import heroImage from "@/assets/hero-abel.png.asset.json";
 import proj1a from "@/assets/proj1-1.jpg";
 import proj1b from "@/assets/proj1-2.jpg";
 import proj1c from "@/assets/proj1-3.jpg";
@@ -321,10 +323,10 @@ function Index() {
 
       <main id="top" className="mx-auto max-w-6xl px-6">
         {/* Hero */}
-        <section className="relative grid grid-cols-1 items-center gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
-          {/* ambient purple glow */}
+        <section className="relative grid grid-cols-1 items-center gap-12 py-20 sm:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          {/* ambient glow */}
           <div
-            className="pointer-events-none absolute right-0 top-1/2 -z-10 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary/25 blur-[120px]"
+            className="pointer-events-none absolute right-0 top-1/2 -z-10 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary/15 blur-[120px]"
             aria-hidden
           />
 
@@ -332,49 +334,81 @@ function Index() {
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" /> AVAILABLE FOR WORK
             </p>
-            <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl">
-              Transform your ideas into digital success
+            <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl xl:text-7xl">
+              Build Once.
+              <br />
+              Scale Faster.
+              <br />
+              <span className="text-primary">Think Bigger.</span>
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
               I'm Abel Tegegn — a Full-Stack Software Engineer specializing in
-              scalable backend architectures, Sans-I/O Python development, robust AI
-              integrations (RAG, Evaluation, MCP), and high-performance Next.js
-              applications.
+              scalable backend architectures, robust AI integrations (RAG,
+              Evaluation, MCP), and high-performance Next.js applications.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                onClick={() => trackEvent("cta_view_projects")}
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-colors hover:bg-primary/90"
-              >
-                View Projects
-              </a>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <HireMeDialog>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-colors hover:bg-primary/90"
                 >
-                  Hire Me
+                  Book a Demo <ArrowUpRight className="h-4 w-4" />
                 </button>
               </HireMeDialog>
+              <a
+                href="#projects"
+                onClick={() => trackEvent("cta_view_projects")}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-transparent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              >
+                Explore Solutions
+              </a>
             </div>
           </div>
 
-          {/* Animated glass visual — right on desktop, below text on mobile */}
+          {/* Hero image card with floating badges */}
           <div className="order-last">
-            <div className="relative mx-auto aspect-square w-full max-w-lg">
-              <div className="animate-float">
+            <div className="relative mx-auto w-full max-w-lg animate-fade-up">
+              <div className="overflow-hidden rounded-2xl border border-border shadow-2xl">
                 <img
-                  src={heroGlass}
-                  alt="Abstract purple glass sculpture representing engineering craft"
-                  width={1024}
-                  height={1024}
-                  className="relative w-full object-contain drop-shadow-2xl"
+                  src={heroImage.url}
+                  alt="Abel Tegegn at Abel Tegegn Technologies in Addis Ababa"
+                  width={1264}
+                  height={1264}
+                  className="w-full object-cover"
                 />
+              </div>
+
+              {/* top-right floating badge */}
+              <div className="absolute -right-3 top-6 flex items-center gap-2 rounded-xl border border-border bg-card/95 px-3 py-2 shadow-lg backdrop-blur sm:-right-6">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <Sparkles className="h-3.5 w-3.5" />
+                </span>
+                <div className="leading-tight">
+                  <p className="text-xs font-medium">AI Systems</p>
+                  <p className="text-[10px] text-muted-foreground">Live &amp; Scalable</p>
+                </div>
+              </div>
+
+              {/* bottom-left floating stat card */}
+              <div className="absolute -left-3 bottom-6 w-40 rounded-xl border border-border bg-card/95 p-3 shadow-lg backdrop-blur sm:-left-6">
+                <p className="text-[10px] tracking-wide text-muted-foreground">
+                  Uptime & Delivery
+                </p>
+                <p className="mt-0.5 text-lg font-semibold text-primary">99.98%</p>
+                <div className="mt-2 flex items-end gap-1">
+                  {[40, 70, 55, 90, 65, 100].map((h, i) => (
+                    <span
+                      key={i}
+                      className="w-full rounded-sm bg-primary/70"
+                      style={{ height: `${h * 0.28}px` }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
+
 
         {/* Certifications marquee */}
         <section aria-label="Certifications" className="border-y border-border py-8">
