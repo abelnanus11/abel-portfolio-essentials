@@ -224,7 +224,8 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
   .animate-spin-slow,
-  .animate-marquee {
+  .animate-marquee,
+  .animate-marquee-slow {
     animation: none;
   }
   .reveal {
