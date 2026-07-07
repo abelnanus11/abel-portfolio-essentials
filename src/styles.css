@@ -204,6 +204,10 @@
   animation: marquee 30s linear infinite;
 }
 
+@utility animate-marquee-slow {
+  animation: marquee 45s linear infinite;
+}
+
 @utility reveal {
   opacity: 0;
   transform: translateY(32px);
@@ -220,7 +224,8 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
   .animate-spin-slow,
-  .animate-marquee {
+  .animate-marquee,
+  .animate-marquee-slow {
     animation: none;
   }
   .reveal {

@@ -14,6 +14,7 @@ import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { HireMeDialog } from "@/components/HireMeDialog";
 import { Reveal } from "@/components/Reveal";
 import { CertificateMarquee } from "@/components/CertificateMarquee";
+import { CollaboratorMarquee } from "@/components/CollaboratorMarquee";
 import { trackEvent } from "@/lib/analytics";
 
 import heroImage from "@/assets/hero-abel.png.asset.json";
@@ -530,9 +531,21 @@ function Index() {
           </Reveal>
         </section>
 
+        {/* Collaborators */}
+        <section id="collaborators" className="scroll-mt-20 py-16">
+          <SectionLabel index="04">Collaborators</SectionLabel>
+          <Reveal>
+            <p className="mb-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Trusted by leading technology organizations across Africa to
+              engineer and scale mission-critical systems.
+            </p>
+          </Reveal>
+          <CollaboratorMarquee />
+        </section>
+
         {/* AI Engineering & Core Competencies */}
         <section id="ai-engineering" className="scroll-mt-20 py-16">
-          <SectionLabel index="04">AI Engineering & Core Competencies</SectionLabel>
+          <SectionLabel index="05">AI Engineering & Core Competencies</SectionLabel>
           <p className="mb-8 font-serif text-xl italic text-muted-foreground">
             Beyond AI agents.
           </p>
@@ -560,7 +573,7 @@ function Index() {
 
         {/* Technologies */}
         <section id="technologies" className="scroll-mt-20 py-16">
-          <SectionLabel index="05">Technologies</SectionLabel>
+          <SectionLabel index="06">Technologies</SectionLabel>
           <Reveal className="flex flex-wrap justify-center gap-3 py-6">
             {technologies.map((tech) => (
               <span
@@ -576,7 +589,7 @@ function Index() {
 
         {/* Contact */}
         <section id="contact" className="scroll-mt-20 py-16">
-          <SectionLabel index="06">Contact</SectionLabel>
+          <SectionLabel index="07">Contact</SectionLabel>
           <div className="max-w-2xl">
             <p className="font-serif text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
               Have a project in mind? Let’s build something clear and durable.
