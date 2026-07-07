@@ -573,7 +573,7 @@ function Index() {
 
         {/* Technologies */}
         <section id="technologies" className="scroll-mt-20 py-16">
-          <SectionLabel index="05">Technologies</SectionLabel>
+          <SectionLabel index="06">Technologies</SectionLabel>
           <Reveal className="flex flex-wrap justify-center gap-3 py-6">
             {technologies.map((tech) => (
               <span
