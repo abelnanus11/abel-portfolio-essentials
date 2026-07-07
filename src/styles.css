@@ -204,6 +204,10 @@
   animation: marquee 30s linear infinite;
 }
 
+@utility animate-marquee-slow {
+  animation: marquee 45s linear infinite;
+}
+
 @utility reveal {
   opacity: 0;
   transform: translateY(32px);
