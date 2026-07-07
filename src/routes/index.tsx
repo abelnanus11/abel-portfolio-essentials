@@ -531,9 +531,21 @@ function Index() {
           </Reveal>
         </section>
 
+        {/* Collaborators */}
+        <section id="collaborators" className="scroll-mt-20 py-16">
+          <SectionLabel index="04">Collaborators</SectionLabel>
+          <Reveal>
+            <p className="mb-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Trusted by leading technology organizations across Africa to
+              engineer and scale mission-critical systems.
+            </p>
+          </Reveal>
+          <CollaboratorMarquee />
+        </section>
+
         {/* AI Engineering & Core Competencies */}
         <section id="ai-engineering" className="scroll-mt-20 py-16">
-          <SectionLabel index="04">AI Engineering & Core Competencies</SectionLabel>
+          <SectionLabel index="05">AI Engineering & Core Competencies</SectionLabel>
           <p className="mb-8 font-serif text-xl italic text-muted-foreground">
             Beyond AI agents.
           </p>
