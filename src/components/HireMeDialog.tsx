@@ -35,14 +35,14 @@ const schema = z.object({
     .max(2000, { message: "Message is too long (2000 char max)" }),
 });
 
-const CONTACT_EMAIL = "abeltegegn191@gmail.com";
+const WEB3FORMS_ACCESS_KEY = "79caf90e-27b1-406f-9e30-fcf86f89cd9a";
 
 export function HireMeDialog({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = {
@@ -68,30 +68,41 @@ export function HireMeDialog({ children }: { children: ReactNode }) {
     setSubmitting(true);
     const v = result.data;
 
-    const subject = encodeURIComponent(`Project inquiry from ${v.name}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${v.name}`,
-        `Email: ${v.email}`,
-        v.company ? `Company: ${v.company}` : null,
-        v.budget ? `Budget: ${v.budget}` : null,
-        "",
-        v.message,
-      ]
-        .filter(Boolean)
-        .join("\n"),
-    );
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Project inquiry from ${v.name}`,
+          from_name: v.name,
+          name: v.name,
+          email: v.email,
+          company: v.company || "—",
+          budget: v.budget || "—",
+          message: v.message,
+        }),
+      });
 
-    trackEvent("hire_me_submitted", { hasCompany: !!v.company, hasBudget: !!v.budget });
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      const payload = (await response.json()) as { success?: boolean; message?: string };
 
-    toast.success("Opening your email client…", {
-      description: "Your message is ready to send. I'll reply within 24 hours.",
-    });
+      if (!response.ok || !payload.success) {
+        throw new Error(payload.message || "Submission failed");
+      }
 
-    setSubmitting(false);
-    setOpen(false);
-    form.reset();
+      trackEvent("hire_me_submitted", { hasCompany: !!v.company, hasBudget: !!v.budget });
+
+      toast.success("Thank you! I'll get back to you within 24 hours.");
+
+      form.reset();
+      setOpen(false);
+    } catch (err) {
+      toast.error("Something went wrong. Please try again or email me directly.", {
+        description: err instanceof Error ? err.message : undefined,
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
