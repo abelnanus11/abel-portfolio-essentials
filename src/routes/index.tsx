@@ -5,6 +5,8 @@ import {
   Mail,
   Linkedin,
   ExternalLink,
+  Sparkles,
+
 
 } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
