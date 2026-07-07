@@ -14,7 +14,7 @@ import { Reveal } from "@/components/Reveal";
 import { CertificateMarquee } from "@/components/CertificateMarquee";
 import { trackEvent } from "@/lib/analytics";
 
-import heroGlass from "@/assets/hero-glass.jpg";
+import heroImage from "@/assets/hero-abel.png.asset.json";
 import proj1a from "@/assets/proj1-1.jpg";
 import proj1b from "@/assets/proj1-2.jpg";
 import proj1c from "@/assets/proj1-3.jpg";
