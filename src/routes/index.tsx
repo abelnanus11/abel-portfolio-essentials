@@ -14,6 +14,7 @@ import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { HireMeDialog } from "@/components/HireMeDialog";
 import { Reveal } from "@/components/Reveal";
 import { CertificateMarquee } from "@/components/CertificateMarquee";
+import { CollaboratorMarquee } from "@/components/CollaboratorMarquee";
 import { trackEvent } from "@/lib/analytics";
 
 import heroImage from "@/assets/hero-abel.png.asset.json";
