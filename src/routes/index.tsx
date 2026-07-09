@@ -633,6 +633,9 @@ function Index() {
           <span>© 2026 Abel Tegegn — Crafting Durable, High-Performance Systems.</span>
         </div>
       </footer>
+
+      <BackToTop />
     </div>
+
   );
 }
