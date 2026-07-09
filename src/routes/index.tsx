@@ -4,7 +4,7 @@ import {
   Github,
   Mail,
   Linkedin,
-  ExternalLink,
+  ArrowUp,
   Sparkles,
 
 
