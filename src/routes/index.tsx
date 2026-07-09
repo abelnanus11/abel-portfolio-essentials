@@ -327,7 +327,7 @@ function Index() {
         <section className="relative grid grid-cols-1 items-center gap-12 py-20 sm:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           {/* ambient glow */}
           <div
-            className="pointer-events-none absolute right-0 top-1/2 -z-10 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary/15 blur-[120px]"
+            className="pointer-events-none absolute right-0 top-1/2 -z-10 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-brand/30 blur-[120px]"
             aria-hidden
           />
 
