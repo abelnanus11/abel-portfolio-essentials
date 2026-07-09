@@ -542,10 +542,10 @@ function Index() {
           <p className="mb-8 font-serif text-xl italic text-muted-foreground">
             Beyond AI agents.
           </p>
-          <Reveal className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
+          <Reveal className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-3">
             {competencies.map((col) => (
               <div key={col.title} className="bg-card p-8">
-                <h3 className="font-serif text-lg font-semibold tracking-tight text-primary">
+                <h3 className="font-serif text-lg font-semibold tracking-tight text-brand-foreground">
                   {col.title}
                 </h3>
                 <ul className="mt-6 space-y-3">
@@ -554,7 +554,7 @@ function Index() {
                       key={item}
                       className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
                     >
-                      <span className="mt-2 h-1 w-1 shrink-0 bg-primary" aria-hidden />
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand" aria-hidden />
                       {item}
                     </li>
                   ))}
