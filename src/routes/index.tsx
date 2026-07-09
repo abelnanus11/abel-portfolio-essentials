@@ -497,9 +497,9 @@ function Index() {
             {caseStudies.map((cs) => (
               <div
                 key={cs.title}
-                className="group flex flex-col border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_40px_-14px] hover:shadow-primary/40"
+                className="group flex flex-col rounded-3xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60 hover:shadow-[0_20px_50px_-20px] hover:shadow-brand/50"
               >
-                <h3 className="font-serif text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
+                <h3 className="font-serif text-xl font-semibold tracking-tight transition-colors group-hover:text-brand-foreground">
                   {cs.title}
                 </h3>
                 <dl className="mt-6 space-y-5">
@@ -510,7 +510,7 @@ function Index() {
                     ["Result", cs.result],
                   ].map(([term, desc]) => (
                     <div key={term}>
-                      <dt className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                      <dt className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-brand-foreground">
                         {term}
                       </dt>
                       <dd className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
