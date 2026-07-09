@@ -18,18 +18,17 @@ import { CollaboratorMarquee } from "@/components/CollaboratorMarquee";
 import { trackEvent } from "@/lib/analytics";
 
 import heroImage from "@/assets/hero-abel.png.asset.json";
-import proj1a from "@/assets/proj1-1.jpg";
-import proj1b from "@/assets/proj1-2.jpg";
-import proj1c from "@/assets/proj1-3.jpg";
-import proj1d from "@/assets/proj1-4.jpg";
-import proj2a from "@/assets/proj2-1.jpg";
-import proj2b from "@/assets/proj2-2.jpg";
-import proj2c from "@/assets/proj2-3.jpg";
-import proj2d from "@/assets/proj2-4.jpg";
-import proj3a from "@/assets/proj3-1.jpg";
-import proj3b from "@/assets/proj3-2.jpg";
-import proj3c from "@/assets/proj3-3.jpg";
-import proj3d from "@/assets/proj3-4.jpg";
+import mvHero from "@/assets/mv-hero.png.asset.json";
+import mvProduct from "@/assets/mv-product.png.asset.json";
+import mvOrders from "@/assets/mv-orders.png.asset.json";
+import mvDashboard from "@/assets/mv-dashboard.png.asset.json";
+import projLms from "@/assets/proj-lms.jpg";
+import projHotel from "@/assets/proj-hotel.jpg";
+import projAdmin from "@/assets/proj-admin.jpg";
+import projMarketing from "@/assets/proj-marketing.jpg";
+import projHeadphone from "@/assets/proj-headphone.jpg";
+import projAiAgent from "@/assets/proj-aiagent.jpg";
+
 
 const DESCRIPTION =
   "Abel Tegegn is a Senior Full-Stack Software Engineer building modern web applications, AI integrations (RAG, LLM evaluation, MCP), WordPress websites, and scalable backend systems.";
