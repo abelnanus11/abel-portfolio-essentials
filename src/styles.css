@@ -5,8 +5,6 @@
 @theme {
   --font-serif: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-brand: var(--brand);
-  --color-brand-foreground: var(--brand-foreground);
 }
 
 @custom-variant dark (&:is(.dark *));
