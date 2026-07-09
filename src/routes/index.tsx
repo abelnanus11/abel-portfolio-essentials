@@ -97,60 +97,63 @@ const services = [
 
 const projects = [
   {
-    title: "Insight AI Platform",
+    title: "Multi-Vendor Ecommerce Platform",
     description:
-      "An AI analytics workspace that turns raw data into decisions with natural-language querying, live dashboards and automated reporting.",
-    stack: ["Next.js", "OpenAI", "FastAPI", "Postgres", "Redis"],
-    images: [proj1a, proj1b, proj1c, proj1d],
-    site: "https://example.com",
-    source: "https://github.com",
-  },
-  {
-    title: "Atelier Commerce",
-    description:
-      "A high-performance headless storefront with a refined editorial layout, sub-second navigation and a seamless checkout flow.",
+      "A full-featured multi-vendor marketplace with a seller dashboard, product management, cart, orders and secure checkout across independent vendors.",
     stack: ["Next.js", "TypeScript", "Node", "Stripe", "Tailwind"],
-    images: [proj2a, proj2b, proj2c, proj2d],
-    site: "https://example.com",
-    source: "https://github.com",
+    images: [mvHero.url, mvProduct.url, mvOrders.url, mvDashboard.url],
+    source: "https://github.com/abel-tegegn/Multi-vendor-ecommerce-platform",
   },
   {
-    title: "Meridian Studio Site",
+    title: "Learning Management System",
     description:
-      "A bespoke WordPress corporate website with a custom block theme, editable content models and finely tuned performance.",
-    stack: ["WordPress", "PHP", "Laravel", "MySQL", "Tailwind"],
-    images: [proj3a, proj3b, proj3c, proj3d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "An end-to-end LMS with course creation, video lessons, student progress tracking, quizzes and instructor dashboards.",
+    stack: ["Next.js", "TypeScript", "Node", "Postgres", "Tailwind"],
+    images: [projLms],
+    source: "https://github.com/abel-tegegn/Learning-management-system",
   },
   {
-    title: "Nimbus SaaS Dashboard",
+    title: "Hotel Booking System",
     description:
-      "A real-time analytics dashboard with role-based access, live charts and a fast, keyboard-driven interface for busy teams.",
-    stack: ["React", "TypeScript", "Node", "Postgres", "Redis"],
-    images: [proj1c, proj2a, proj3b, proj1d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "A hotel booking platform with room listings, real-time availability, date selection, secure payments and booking management.",
+    stack: ["React", "Node", "Postgres", "Stripe", "Tailwind"],
+    images: [projHotel],
+    source: "https://github.com/abel-tegegn/Hotel-Booking",
   },
   {
-    title: "Verse Content API",
+    title: "Admin Dashboard for Business",
     description:
-      "A scalable headless CMS and content API powering multiple frontends with edge caching and granular versioning.",
-    stack: ["Python (FastAPI)", "Postgres", "Docker", "Redis"],
-    images: [proj2c, proj3a, proj1b, proj2d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "A business admin dashboard with KPIs, revenue analytics, live charts, tables and role-based access for operations teams.",
+    stack: ["React", "TypeScript", "Node", "Postgres", "Recharts"],
+    images: [projAdmin],
+    source: "https://github.com/abel-tegegn/Admin-Dashboard",
   },
   {
-    title: "Aurora Booking Platform",
+    title: "Marketing Dashboard",
     description:
-      "A booking and scheduling platform with conflict-free reservations, payments and automated email workflows.",
-    stack: ["Next.js", "Stripe", "Node", "Postgres", "Tailwind"],
-    images: [proj3c, proj1a, proj2b, proj3d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "A marketing analytics dashboard visualizing campaign performance, conversion funnels, social metrics and ROI in real time.",
+    stack: ["React", "TypeScript", "Node", "Charts", "Tailwind"],
+    images: [projMarketing],
+    source: "https://github.com/abel-tegegn/Marketing-Dashboard",
+  },
+  {
+    title: "AT Headphone Ecommerce",
+    description:
+      "A premium headphone online store with a polished product showcase, cart, checkout and a fast, refined shopping experience.",
+    stack: ["Next.js", "TypeScript", "Stripe", "Node", "Tailwind"],
+    images: [projHeadphone],
+    source: "https://github.com/abel-tegegn/AT-Headphone-E-commerce",
+  },
+  {
+    title: "AI Agent",
+    description:
+      "An autonomous AI agent with conversational chat, tool-calling, retrieval and multi-step reasoning to automate complex tasks.",
+    stack: ["Python (FastAPI)", "OpenAI", "LangChain", "Postgres", "Redis"],
+    images: [projAiAgent],
+    source: "https://github.com/abel-tegegn/Ai-agent",
   },
 ];
+
 
 
 const caseStudies = [
