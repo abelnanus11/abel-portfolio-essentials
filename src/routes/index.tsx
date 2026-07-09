@@ -7,10 +7,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { BackToTop } from "@/components/BackToTop";
-  Sparkles,
-
-
-} from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { HireMeDialog } from "@/components/HireMeDialog";
