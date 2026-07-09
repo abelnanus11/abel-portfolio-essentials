@@ -369,7 +369,7 @@ function Index() {
           {/* Hero image card with floating badges */}
           <div className="order-last">
             <div className="relative mx-auto w-full max-w-lg animate-fade-up">
-              <div className="overflow-hidden rounded-2xl border border-border shadow-2xl">
+              <div className="overflow-hidden rounded-3xl border border-border shadow-2xl">
                 <img
                   src={heroImage.url}
                   alt="Abel Tegegn at Abel Tegegn Technologies in Addis Ababa"
@@ -380,8 +380,8 @@ function Index() {
               </div>
 
               {/* top-right floating badge */}
-              <div className="absolute -right-3 top-6 flex items-center gap-2 rounded-xl border border-border bg-card/95 px-3 py-2 shadow-lg backdrop-blur sm:-right-6">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/15 text-primary">
+              <div className="absolute -right-3 top-6 flex items-center gap-2 rounded-2xl border border-border bg-popover/95 px-3 py-2 shadow-lg backdrop-blur sm:-right-6">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand/20 text-brand-foreground">
                   <Sparkles className="h-3.5 w-3.5" />
                 </span>
                 <div className="leading-tight">
@@ -391,16 +391,16 @@ function Index() {
               </div>
 
               {/* bottom-left floating stat card */}
-              <div className="absolute -left-3 bottom-6 w-40 rounded-xl border border-border bg-card/95 p-3 shadow-lg backdrop-blur sm:-left-6">
+              <div className="absolute -left-3 bottom-6 w-40 rounded-2xl border border-border bg-popover/95 p-3 shadow-lg backdrop-blur sm:-left-6">
                 <p className="text-[10px] tracking-wide text-muted-foreground">
                   Uptime & Delivery
                 </p>
-                <p className="mt-0.5 text-lg font-semibold text-primary">99.98%</p>
+                <p className="mt-0.5 text-lg font-semibold text-brand-foreground">99.98%</p>
                 <div className="mt-2 flex items-end gap-1">
                   {[40, 70, 55, 90, 65, 100].map((h, i) => (
                     <span
                       key={i}
-                      className="w-full rounded-sm bg-primary/70"
+                      className="w-full rounded-sm bg-brand"
                       style={{ height: `${h * 0.28}px` }}
                     />
                   ))}
