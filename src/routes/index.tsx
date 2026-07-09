@@ -571,7 +571,7 @@ function Index() {
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="rounded-md border border-border bg-card px-5 py-2.5 font-sans text-sm font-medium tracking-wide text-foreground transition-colors hover:bg-muted"
+                className="rounded-full border border-border bg-card px-5 py-2.5 font-sans text-sm font-medium tracking-wide text-foreground transition-colors hover:bg-muted"
               >
                 {tech}
               </span>
