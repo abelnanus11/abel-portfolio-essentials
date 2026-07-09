@@ -332,15 +332,15 @@ function Index() {
           />
 
           <div className="order-first animate-fade-up">
-            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> AVAILABLE FOR WORK
+            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 font-sans text-xs font-medium tracking-[0.15em] text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand" /> AVAILABLE FOR WORK
             </p>
             <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl xl:text-7xl">
               Build Once.
               <br />
               Scale Faster.
               <br />
-              <span className="text-primary">Think Bigger.</span>
+              <span className="text-muted-foreground">Think Bigger.</span>
             </h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
               I'm Abel Tegegn — a Full-Stack Software Engineer specializing in
