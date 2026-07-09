@@ -4,7 +4,9 @@ import {
   Github,
   Mail,
   Linkedin,
-  ArrowUp,
+  Sparkles,
+} from "lucide-react";
+import { BackToTop } from "@/components/BackToTop";
   Sparkles,
 
 
