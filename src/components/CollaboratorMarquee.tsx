@@ -31,8 +31,8 @@ const collaborators: Collaborator[] = [
 
 function CollaboratorCard({ name, logo, description }: Collaborator) {
   return (
-    <article className="flex w-[340px] shrink-0 flex-col overflow-hidden border border-border bg-card transition-colors hover:border-primary/50 sm:w-[420px]">
-      <div className="flex h-40 items-center justify-center border-b border-border bg-background p-6">
+    <article className="flex w-[340px] shrink-0 flex-col overflow-hidden rounded-3xl border border-border bg-card transition-colors hover:border-brand/50 sm:w-[420px]">
+      <div className="flex h-40 items-center justify-center border-b border-border bg-muted p-6">
         <img
           src={logo}
           alt={`${name} logo`}
