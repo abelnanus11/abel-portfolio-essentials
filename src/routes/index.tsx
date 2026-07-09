@@ -4,11 +4,9 @@ import {
   Github,
   Mail,
   Linkedin,
-  ExternalLink,
   Sparkles,
-
-
 } from "lucide-react";
+import { BackToTop } from "@/components/BackToTop";
 import { Toaster } from "@/components/ui/sonner";
 import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { HireMeDialog } from "@/components/HireMeDialog";
@@ -18,18 +16,17 @@ import { CollaboratorMarquee } from "@/components/CollaboratorMarquee";
 import { trackEvent } from "@/lib/analytics";
 
 import heroImage from "@/assets/hero-abel.png.asset.json";
-import proj1a from "@/assets/proj1-1.jpg";
-import proj1b from "@/assets/proj1-2.jpg";
-import proj1c from "@/assets/proj1-3.jpg";
-import proj1d from "@/assets/proj1-4.jpg";
-import proj2a from "@/assets/proj2-1.jpg";
-import proj2b from "@/assets/proj2-2.jpg";
-import proj2c from "@/assets/proj2-3.jpg";
-import proj2d from "@/assets/proj2-4.jpg";
-import proj3a from "@/assets/proj3-1.jpg";
-import proj3b from "@/assets/proj3-2.jpg";
-import proj3c from "@/assets/proj3-3.jpg";
-import proj3d from "@/assets/proj3-4.jpg";
+import mvHero from "@/assets/mv-hero.png.asset.json";
+import mvProduct from "@/assets/mv-product.png.asset.json";
+import mvOrders from "@/assets/mv-orders.png.asset.json";
+import mvDashboard from "@/assets/mv-dashboard.png.asset.json";
+import projLms from "@/assets/proj-lms.jpg";
+import projHotel from "@/assets/proj-hotel.jpg";
+import projAdmin from "@/assets/proj-admin.jpg";
+import projMarketing from "@/assets/proj-marketing.jpg";
+import projHeadphone from "@/assets/proj-headphone.jpg";
+import projAiAgent from "@/assets/proj-aiagent.jpg";
+
 
 const DESCRIPTION =
   "Abel Tegegn is a Senior Full-Stack Software Engineer building modern web applications, AI integrations (RAG, LLM evaluation, MCP), WordPress websites, and scalable backend systems.";
@@ -98,60 +95,63 @@ const services = [
 
 const projects = [
   {
-    title: "Insight AI Platform",
+    title: "Multi-Vendor Ecommerce Platform",
     description:
-      "An AI analytics workspace that turns raw data into decisions with natural-language querying, live dashboards and automated reporting.",
-    stack: ["Next.js", "OpenAI", "FastAPI", "Postgres", "Redis"],
-    images: [proj1a, proj1b, proj1c, proj1d],
-    site: "https://example.com",
-    source: "https://github.com",
-  },
-  {
-    title: "Atelier Commerce",
-    description:
-      "A high-performance headless storefront with a refined editorial layout, sub-second navigation and a seamless checkout flow.",
+      "A full-featured multi-vendor marketplace with a seller dashboard, product management, cart, orders and secure checkout across independent vendors.",
     stack: ["Next.js", "TypeScript", "Node", "Stripe", "Tailwind"],
-    images: [proj2a, proj2b, proj2c, proj2d],
-    site: "https://example.com",
-    source: "https://github.com",
+    images: [mvHero.url, mvProduct.url, mvOrders.url, mvDashboard.url],
+    source: "https://github.com/abel-tegegn/Multi-vendor-ecommerce-platform",
   },
   {
-    title: "Meridian Studio Site",
+    title: "Learning Management System",
     description:
-      "A bespoke WordPress corporate website with a custom block theme, editable content models and finely tuned performance.",
-    stack: ["WordPress", "PHP", "Laravel", "MySQL", "Tailwind"],
-    images: [proj3a, proj3b, proj3c, proj3d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "An end-to-end LMS with course creation, video lessons, student progress tracking, quizzes and instructor dashboards.",
+    stack: ["Next.js", "TypeScript", "Node", "Postgres", "Tailwind"],
+    images: [projLms],
+    source: "https://github.com/abel-tegegn/Learning-management-system",
   },
   {
-    title: "Nimbus SaaS Dashboard",
+    title: "Hotel Booking System",
     description:
-      "A real-time analytics dashboard with role-based access, live charts and a fast, keyboard-driven interface for busy teams.",
-    stack: ["React", "TypeScript", "Node", "Postgres", "Redis"],
-    images: [proj1c, proj2a, proj3b, proj1d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "A hotel booking platform with room listings, real-time availability, date selection, secure payments and booking management.",
+    stack: ["React", "Node", "Postgres", "Stripe", "Tailwind"],
+    images: [projHotel],
+    source: "https://github.com/abel-tegegn/Hotel-Booking",
   },
   {
-    title: "Verse Content API",
+    title: "Admin Dashboard for Business",
     description:
-      "A scalable headless CMS and content API powering multiple frontends with edge caching and granular versioning.",
-    stack: ["Python (FastAPI)", "Postgres", "Docker", "Redis"],
-    images: [proj2c, proj3a, proj1b, proj2d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "A business admin dashboard with KPIs, revenue analytics, live charts, tables and role-based access for operations teams.",
+    stack: ["React", "TypeScript", "Node", "Postgres", "Recharts"],
+    images: [projAdmin],
+    source: "https://github.com/abel-tegegn/Admin-Dashboard",
   },
   {
-    title: "Aurora Booking Platform",
+    title: "Marketing Dashboard",
     description:
-      "A booking and scheduling platform with conflict-free reservations, payments and automated email workflows.",
-    stack: ["Next.js", "Stripe", "Node", "Postgres", "Tailwind"],
-    images: [proj3c, proj1a, proj2b, proj3d],
-    site: "https://example.com",
-    source: "https://github.com",
+      "A marketing analytics dashboard visualizing campaign performance, conversion funnels, social metrics and ROI in real time.",
+    stack: ["React", "TypeScript", "Node", "Charts", "Tailwind"],
+    images: [projMarketing],
+    source: "https://github.com/abel-tegegn/Marketing-Dashboard",
+  },
+  {
+    title: "AT Headphone Ecommerce",
+    description:
+      "A premium headphone online store with a polished product showcase, cart, checkout and a fast, refined shopping experience.",
+    stack: ["Next.js", "TypeScript", "Stripe", "Node", "Tailwind"],
+    images: [projHeadphone],
+    source: "https://github.com/abel-tegegn/AT-Headphone-E-commerce",
+  },
+  {
+    title: "AI Agent",
+    description:
+      "An autonomous AI agent with conversational chat, tool-calling, retrieval and multi-step reasoning to automate complex tasks.",
+    stack: ["Python (FastAPI)", "OpenAI", "LangChain", "Postgres", "Redis"],
+    images: [projAiAgent],
+    source: "https://github.com/abel-tegegn/Ai-agent",
   },
 ];
+
 
 
 const caseStudies = [
@@ -473,22 +473,15 @@ function Index() {
                     </div>
                     <div className="mt-6 flex items-center gap-5 border-t border-border pt-5">
                       <a
-                        href={project.site}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
-                      >
-                        Visit Website <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
-                      <a
                         href={project.source}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                       >
-                        Source <Github className="h-3.5 w-3.5" />
+                        View Source <Github className="h-3.5 w-3.5" />
                       </a>
                     </div>
+
                   </div>
                 </article>
               </Reveal>
@@ -640,6 +633,9 @@ function Index() {
           <span>© 2026 Abel Tegegn — Crafting Durable, High-Performance Systems.</span>
         </div>
       </footer>
+
+      <BackToTop />
     </div>
+
   );
 }
