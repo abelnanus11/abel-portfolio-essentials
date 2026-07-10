@@ -26,10 +26,10 @@ import projLms3 from "@/assets/proj-lms-3.jpg";
 import projHotel from "@/assets/proj-hotel.jpg";
 import projHotel2 from "@/assets/proj-hotel-2.jpg";
 import projHotel3 from "@/assets/proj-hotel-3.jpg";
-import projAdmin from "@/assets/proj-admin.jpg";
+import projAdmin from "@/assets/admin-upload.png.asset.json";
 import projAdmin2 from "@/assets/proj-admin-2.jpg";
 import projAdmin3 from "@/assets/proj-admin-3.jpg";
-import projMarketing from "@/assets/proj-marketing.jpg";
+import projMarketing from "@/assets/marketing-upload.webp.asset.json";
 import projMarketing2 from "@/assets/proj-marketing-2.jpg";
 import projMarketing3 from "@/assets/proj-marketing-3.jpg";
 import projHeadphone from "@/assets/proj-headphone.jpg";
@@ -135,7 +135,7 @@ const projects = [
     description:
       "A business admin dashboard with KPIs, revenue analytics, live charts, tables and role-based access for operations teams.",
     stack: ["React", "TypeScript", "Node", "Postgres", "Recharts"],
-    images: [projAdmin, projAdmin2, projAdmin3],
+    images: [projAdmin.url, projAdmin2, projAdmin3],
     source: "https://github.com/abel-tegegn/Admin-Dashboard",
   },
   {
@@ -143,7 +143,7 @@ const projects = [
     description:
       "A marketing analytics dashboard visualizing campaign performance, conversion funnels, social metrics and ROI in real time.",
     stack: ["React", "TypeScript", "Node", "Charts", "Tailwind"],
-    images: [projMarketing, projMarketing2, projMarketing3],
+    images: [projMarketing.url, projMarketing2, projMarketing3],
     source: "https://github.com/abel-tegegn/Marketing-Dashboard",
   },
   {
