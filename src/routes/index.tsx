@@ -119,7 +119,7 @@ const projects = [
     description:
       "An end-to-end LMS with course creation, video lessons, student progress tracking, quizzes and instructor dashboards.",
     stack: ["Next.js", "TypeScript", "Node", "Postgres", "Tailwind"],
-    images: [projLms],
+    images: [projLms, projLms2, projLms3],
     source: "https://github.com/abel-tegegn/Learning-management-system",
   },
   {
@@ -127,7 +127,7 @@ const projects = [
     description:
       "A hotel booking platform with room listings, real-time availability, date selection, secure payments and booking management.",
     stack: ["React", "Node", "Postgres", "Stripe", "Tailwind"],
-    images: [projHotel],
+    images: [projHotel, projHotel2, projHotel3],
     source: "https://github.com/abel-tegegn/Hotel-Booking",
   },
   {
@@ -135,7 +135,7 @@ const projects = [
     description:
       "A business admin dashboard with KPIs, revenue analytics, live charts, tables and role-based access for operations teams.",
     stack: ["React", "TypeScript", "Node", "Postgres", "Recharts"],
-    images: [projAdmin],
+    images: [projAdmin, projAdmin2, projAdmin3],
     source: "https://github.com/abel-tegegn/Admin-Dashboard",
   },
   {
@@ -143,7 +143,7 @@ const projects = [
     description:
       "A marketing analytics dashboard visualizing campaign performance, conversion funnels, social metrics and ROI in real time.",
     stack: ["React", "TypeScript", "Node", "Charts", "Tailwind"],
-    images: [projMarketing],
+    images: [projMarketing, projMarketing2, projMarketing3],
     source: "https://github.com/abel-tegegn/Marketing-Dashboard",
   },
   {
@@ -151,7 +151,7 @@ const projects = [
     description:
       "A premium headphone online store with a polished product showcase, cart, checkout and a fast, refined shopping experience.",
     stack: ["Next.js", "TypeScript", "Stripe", "Node", "Tailwind"],
-    images: [projHeadphone],
+    images: [projHeadphone, projHeadphone2, projHeadphone3],
     source: "https://github.com/abel-tegegn/AT-Headphone-E-commerce",
   },
   {
@@ -159,7 +159,7 @@ const projects = [
     description:
       "An autonomous AI agent with conversational chat, tool-calling, retrieval and multi-step reasoning to automate complex tasks.",
     stack: ["Python (FastAPI)", "OpenAI", "LangChain", "Postgres", "Redis"],
-    images: [projAiAgent],
+    images: [projAiAgent, projAiAgent2, projAiAgent3],
     source: "https://github.com/abel-tegegn/Ai-agent",
   },
 ];
