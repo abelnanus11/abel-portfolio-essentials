@@ -135,7 +135,7 @@ const projects = [
     description:
       "A business admin dashboard with KPIs, revenue analytics, live charts, tables and role-based access for operations teams.",
     stack: ["React", "TypeScript", "Node", "Postgres", "Recharts"],
-    images: [projAdmin, projAdmin2, projAdmin3],
+    images: [projAdmin.url, projAdmin2, projAdmin3],
     source: "https://github.com/abel-tegegn/Admin-Dashboard",
   },
   {
@@ -143,7 +143,7 @@ const projects = [
     description:
       "A marketing analytics dashboard visualizing campaign performance, conversion funnels, social metrics and ROI in real time.",
     stack: ["React", "TypeScript", "Node", "Charts", "Tailwind"],
-    images: [projMarketing, projMarketing2, projMarketing3],
+    images: [projMarketing.url, projMarketing2, projMarketing3],
     source: "https://github.com/abel-tegegn/Marketing-Dashboard",
   },
   {
