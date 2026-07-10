@@ -21,11 +21,23 @@ import mvProduct from "@/assets/mv-product.png.asset.json";
 import mvOrders from "@/assets/mv-orders.png.asset.json";
 import mvDashboard from "@/assets/mv-dashboard.png.asset.json";
 import projLms from "@/assets/proj-lms.jpg";
+import projLms2 from "@/assets/proj-lms-2.jpg";
+import projLms3 from "@/assets/proj-lms-3.jpg";
 import projHotel from "@/assets/proj-hotel.jpg";
+import projHotel2 from "@/assets/proj-hotel-2.jpg";
+import projHotel3 from "@/assets/proj-hotel-3.jpg";
 import projAdmin from "@/assets/proj-admin.jpg";
+import projAdmin2 from "@/assets/proj-admin-2.jpg";
+import projAdmin3 from "@/assets/proj-admin-3.jpg";
 import projMarketing from "@/assets/proj-marketing.jpg";
+import projMarketing2 from "@/assets/proj-marketing-2.jpg";
+import projMarketing3 from "@/assets/proj-marketing-3.jpg";
 import projHeadphone from "@/assets/proj-headphone.jpg";
+import projHeadphone2 from "@/assets/proj-headphone-2.jpg";
+import projHeadphone3 from "@/assets/proj-headphone-3.jpg";
 import projAiAgent from "@/assets/proj-aiagent.jpg";
+import projAiAgent2 from "@/assets/proj-aiagent-2.jpg";
+import projAiAgent3 from "@/assets/proj-aiagent-3.jpg";
 
 
 const DESCRIPTION =
