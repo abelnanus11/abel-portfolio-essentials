@@ -350,9 +350,9 @@ function Index() {
             <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl xl:text-7xl">
               Build Once.
               <br />
-              Scale Faster.
+              Scale <span style={{ fontFamily: "var(--font-display-italic)" }} className="italic font-normal text-primary">faster</span>.
               <br />
-              <span className="text-muted-foreground">Think Bigger.</span>
+              <span style={{ fontFamily: "var(--font-display-italic)" }} className="italic font-normal text-muted-foreground">Think Bigger.</span>
             </h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
               I'm Abel Tegegn — a Full-Stack Software Engineer specializing in
@@ -365,7 +365,7 @@ function Index() {
                   type="button"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-colors hover:bg-primary/90"
                 >
-                  Book a Demo <ArrowUpRight className="h-4 w-4" />
+                  Hire Us <ArrowUpRight className="h-4 w-4" />
                 </button>
               </HireMeDialog>
               <a
